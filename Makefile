@@ -8,9 +8,9 @@ BINDIR = bin
 LIBDIR = lib
 BIN_NAME = main
 
-COMP = clang
-COMPFLAGS = -Wall -Wextra -std=c17 -I$(INCDIR) -ggdb
-LIBFLAGS=-lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl -lm
+COMP = clang-17
+COMPFLAGS = -Wall -Wextra -pedantic -std=c17 -I$(INCDIR) -ggdb
+LIBFLAGS=-lglfw3 -lGL -lX11 -lpthread -lXrandr -lXi -ldl -lm
 
 SOURCES = $(wildcard $(SRCDIR)/*.c)
 OBJECTS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SOURCES))
